@@ -17,7 +17,7 @@
 </head>
 <title> Larvel 8 Application </title>
 <body>
-    <h1> Larvel 8 Application </h1>
+    {{-- <h1> Larvel 8 Application </h1> --}}
     <div class="container">
         <br>
         @yield('content')

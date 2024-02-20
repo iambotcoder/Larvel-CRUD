@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="pull-left">
-            <h2>Laravel 8 CRUD Example</h2>
+            {{-- <h2>Laravel 8 CRUD Example</h2> --}}
         </div>
         <div class="pull-right">
             <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Product</a>
@@ -36,7 +36,7 @@
                 <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Edit</a>
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger">Delete</button>
+                <button type="submit" class="btn btn-danger" style="background: rgb(168, 4, 4)">Delete</button>
             </form>
         </td>
     </tr>

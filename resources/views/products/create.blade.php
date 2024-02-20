@@ -42,7 +42,7 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" style="background: rgb(4, 85, 179)">Submit</button>
         </div>
     </div>
 
