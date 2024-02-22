@@ -110,7 +110,6 @@ class StudentController extends Controller
                         'course' => $request->course,
                         'email' => $request->email,
                         'phone' => $request->phone,
-                        
                     ]
                 );
                 return response()->json([

@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Providers;
-
-// use Illuminate\Support\Facades\Gate;
+use App\Models\Product;
+use App\Policies\ProductPolicy;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
@@ -13,7 +14,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array<class-string, class-string>
      */
     protected $policies = [
-        //
+        Product::class => ProductPolicy::class
     ];
 
     /**
@@ -21,6 +22,19 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+
+        $this->registerPolicies();
+
+        Gate::define('isAdmin',function($user){
+            return $user->role == 'admin';
+        });
+
+        Gate::define('isUser',function($user){
+            return $user->role == 'user';
+        });
+
+        Gate::define('isEditor',function($user){
+            return $user->role == 'editor';
+        });
     }
 }
