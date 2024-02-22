@@ -12,8 +12,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::latest()->paginate(5);
-        return view('products.index',compact('products'))->with(request()->input('page'));
+        
+        $products = Product::with('user')->get();
+        return view('products.index',compact('products'));
+        // return view('policy.index',compact('products'));
     }
 
     /**
@@ -36,9 +38,17 @@ class ProductController extends Controller
         ]);
 
         //create a new product
-        product::create($request->all());
+        // product::create($request->all());
         // echo "Requested";
-        
+        $product = new Product();
+        $product->name = $request->name;
+        $product->detail = $request->detail;
+
+        // Assign the user_id to the product
+        $product->user_id = $request->user()->id; // Or $request->user()->id
+
+        // Save the product
+        $product->save();
         //redirect the user and send friendly message
         return redirect()->route('products.index')->with('success','Product created successfully');
     }
@@ -48,7 +58,7 @@ class ProductController extends Controller
      */
     public function show(product $product)
     {
-        $product = Product::findOrFail($product);
+        // $product = Product::findOrFail($product);
         return view('products.show', compact('product'));
     }
 
