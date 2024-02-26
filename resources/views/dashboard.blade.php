@@ -10,7 +10,8 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     
-                        <a href="{{route('products.index')}}"> Products Page </a>
+                        <a href="{{route('products.index')}}" class="btn btn-primary"> View Products </a><br><br>
+                        <a href="{{route('portfolios.index')}}" class="btn btn-success"> View Portfolios </a>
                     
                 </div>
             </div>

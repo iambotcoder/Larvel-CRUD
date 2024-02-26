@@ -1,9 +1,5 @@
 @extends('products.layout')
-<div class="row">
-    <div class="col-lg-12">
 
-    </div>
-</div>
 @section('content')
 <div class="row">
     <div class="col-lg-12">
@@ -11,7 +7,7 @@
             {{-- <h2>Laravel 8 CRUD Example</h2> --}}
         </div>
         <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Product</a>
+            <a class="btn btn-success" href="{{ route('portfolios.create') }}"> Create New Portfolio</a>
             <a href="{{ route('dashboard') }}" class="btn btn-primary">Back to Dashboard</a>
         </div>
     </div>
@@ -27,26 +23,24 @@
     <tr>
         <th>ID</th>
         <th>Name</th>
-        <th>Details</th>
-        <th>User Name</th>
+        <th>Email</th>
+        <th>Bio</th>
         <th width="280px">Action</th>
     </tr>
-    @foreach ($products as $product)
+    @foreach ($portfolios as $portfolio)
     
     <tr>
-        <td>{{ $product->id }}</td>
-        <td>{{ $product->name }}</td>
-        <td>{{ $product->detail }}</td>
-        <td>{{ $product->user->name}}</td>
+        <td>{{ $portfolio->id }}</td>
+        <td>{{ $portfolio->name }}</td>
+        <td>{{ $portfolio->email }}</td>
+        <td>{{ $portfolio->bio }}</td>
         <td>
-            <form action="{{ route('products.destroy',$product->id) }}" method="POST">
-                <a class="btn btn-info" href="{{ route('products.show',$product->id) }}">Show</a>
-                @can('view',$product)
-                <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Edit</a>
+            <form action="{{ route('portfolios.destroy',$portfolio->id) }}" method="POST">
+                <a class="btn btn-info" href="{{ route('portfolios.show',$portfolio->id) }}">Show</a>
+                <a class="btn btn-primary" href="{{ route('portfolios.edit',$portfolio->id) }}">Edit</a>
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger" style="background: rgb(168, 4, 4)">Delete</button>
-                @endcan
             </form>
         </td>
     </tr>
@@ -54,7 +48,6 @@
     @endforeach
 
 </table>
-{{-- {{ $products->links() }} --}}
-
+{{-- {{ $portfolios->links() }} --}}
 
 @endsection

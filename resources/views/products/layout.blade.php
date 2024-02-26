@@ -16,6 +16,33 @@
         <link href="https://cdnjs.cloudfare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
 
     <title>Document</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Good font */
+            background-color: #f4f4f4; /* Pale-colored background */
+            color: #333; /* Dark gray text color */
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            background-color: #fff; /* White background for tables */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle elevation */
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd; /* Light gray border bottom */
+        }
+        th {
+            background-color: #f2f2f2; /* Light gray background for table headers */
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9; /* Alternate row color */
+        }
+    </style>
 </head>
 <title> Larvel 8 Application </title>
 <body>
